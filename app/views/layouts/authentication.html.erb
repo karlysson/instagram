@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="vidth=device-width, initial-scale=1.0">
+
+    <title>Autenticação - Instragram</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'authentication' %>
+    <%= javascript_pack_tag 'authentication' %>
+  </head>
+
+  <body data-flash-messages="<%= JSON.dump(flash.to_a) %>">
+
+    <main>
+      <section class="hero">
+        <div class="logo">
+          <%= image_tag "instagram.png" %>
+        </div>
+
+        <%= yield %>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
+  include SuggestedUsers
+
   before_action :set_post, only: [:show]
+  before_action :set_suggested_users, only: %i[index]
 
   # GET /posts
   def index
-    flash.now[:error] = "Eai!!!"
     @posts = Post.all
   end
 
@@ -19,7 +21,7 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.merge(created_by: current_user))
 
     if @post.save
       redirect_to @post, notice: 'Post foi criado com sucesso.'
