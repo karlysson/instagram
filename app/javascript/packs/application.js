@@ -6,6 +6,8 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
+require("trix")
+require("@rails/actiontext")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -18,3 +20,4 @@ require("channels")
 import "../src/application.css";
 import "./flashMessages";
 import "./modal";
+import "./likes";
