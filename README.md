@@ -18,6 +18,7 @@ Here are the technologies used in this project.
 * Redis
 * Active Storage
 * I18N
+* Action Cable
 
 ## Services Used
 
